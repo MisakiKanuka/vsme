@@ -1,15 +1,35 @@
 -- schema.sql
 
-DROP TABLE IF EXISTS users_list;
+DROP TABLE IF EXISTS USERSLIST;
+DROP TABLE IF EXISTS GOAL;
+DROP TABLE IF EXISTS DETAIL;
 
-CREATE TABLE users_list(
-  name     TEXT,
-  password TEXT,
-  goal     TEXT,
-  wins     INTEGER,
-  losses   INTEGER
+
+-- 名前・パスワード管理
+CREATE TABLE USERSLIST(
+  userid       INT,
+  name         TEXT,
+  password     TEXT
+);
+
+-- 目標管理
+CREATE TABLE GOAL(
+  userid       INT,
+  goal         TEXT
+);
+
+-- 入力データの詳細管理
+CREATE TABLE DETAIL(
+  userid       INT,
+  DATE         DATETIME,
+  behavior     TEXT,
+  winlose      INT
 );
 
 -- 初期データ
-INSERT INTO users_list
-VALUES ('MANA', 'mana0115', 'TOEIC700点以上！', 2, 0);
+INSERT INTO USERSLIST
+VALUES ('001', 'MISAKI', 'kkkkkanuka0320');
+INSERT INTO GOAL
+VALUES ('001', '体力が欲しい！');
+INSERT INTO DETAIL
+VALUES ('001', '2018/12/06', '3キロ走った', 1);
