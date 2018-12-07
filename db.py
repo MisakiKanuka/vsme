@@ -13,5 +13,33 @@ def init_db():
     conn.close()
 
 
+# 行動詳細
+def find_detail_data():
+    conn = sqlite3.connect("vsme.sqlite")
+
+    cursor = conn.cursor()
+
+    sql = "SELECT * FROM DETAIL"
+
+    detail_data = cursor.execute(sql).fetchall()
+
+    conn.close()
+
+    return detail_data
+
+
+def add_detail_date(userid, date, behavior, winlose):
+    conn = sqlite3.connect("vsme.sql")
+
+    cursor = conn.cursor()
+
+    sql = "INSERT INTO DETAIL (userid, date, behavior, winlose) VALUES(?, ?)"
+    cursor.execute(sql, (userid, date, behavior, winlose))
+
+    conn.commit()
+
+    conn.close()
+
+
 if __name__ == "__main__":
     init_db()
