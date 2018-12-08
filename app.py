@@ -23,11 +23,10 @@ def add_detail_date():
 
     if request.method == "POST":
         userid = request.form["userid"]
-        date = request.form["date"]
         behavior = request.form["behavior"]
         winlose = request.form["winlose"]
 
-        db.add_detail_date(userid, date, behavior, winlose)
+        db.add_detail_date(userid, behavior, winlose)
 
         return redirect(url_for("index"))
 
