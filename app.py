@@ -52,7 +52,7 @@ def add_goal():
 @app.route("/", methods=["GET", "POST"])
 def create_user():
     if request.method == "GET":
-        users_info = db.create_user()
+        users_info = db.find_user()
         return render_template("login.html", users_info=users_info)
 
     if request.method == "POST":
@@ -62,7 +62,7 @@ def create_user():
 
         db.create_user(userid, name, password)
 
-        return redirect(url_for("goal"))
+        return redirect(url_for("add_goal"))
 
 
 if __name__ == "__main__":

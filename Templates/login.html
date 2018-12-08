@@ -6,11 +6,12 @@
 </head>
 <body>
 <h1>vsME!</h1>
+<p>vsME!は昨日の自分と戦えるWebアプリです</p>
 <h2>ユーザー登録</h2>
 <form action="{{ url_for('create_user')}}" method="post">
-    ID：<input type="text" name="userid">
-    ID：<input type="text" name="name">
-    ID：<input type="text" name="password">
+    ID：<input type="text" name="userid"><br>
+    名前：<input type="text" name="name"><br>
+    パスワード：<input type="text" name="password"><br>
     <input type="submit" value="登録"> <input type="reset" value="リセット">
 </form>
 </body>
