@@ -12,7 +12,7 @@ def init_db():
     conn.close()
 
 
-# 行動詳細
+# 行動詳細表示
 def find_detail_date():
     conn = sqlite3.connect("vsme.sqlite")
 
@@ -27,6 +27,7 @@ def find_detail_date():
     return detail_date
 
 
+# 行動記入
 def add_detail_date(userid, date, behavior, winlose):
     conn = sqlite3.connect("vsme.sqlite")
 
@@ -38,6 +39,24 @@ def add_detail_date(userid, date, behavior, winlose):
     conn.commit()
 
     conn.close()
+
+
+# 目標表示
+def find_goal():
+    conn = sqlite3.connect("vsme.sqlite")
+
+    cursor = conn.cursor()
+
+    sql = "SELECT goal FROM GOAL"
+
+    gorl = cursor.execute(sql).fetchall()
+
+    conn.close()
+
+    return gorl
+
+
+# 目標記録 まだ書いてない
 
 
 if __name__ == "__main__":

@@ -10,15 +10,19 @@
 <div id="wrap">
     <h1>vsME!</h1>
 
+    <h2>目標：ここにGOALテーブルに入っているgoalを固定で表示させたい</h2>
+
     <ul>
         {%for Individual_detail in detail %}
-        <li>{{ Individual_detail }}</li>
+        <li>{{ Individual_detail[1] }} {{ Individual_detail[2] }} {{ Individual_detail[3] }} {{ Individual_detail[4]
+            }}
+        </li>
         {% endfor %}
     </ul>
 
     <h2>今日は何をしましたか？</h2>
     <ul>
-        <li><a href="{{ url_for('add_detail_date') }}">記録</a></li>
+        <li><a href="{{ url_for('add_detail_date') }}">記録する</a></li>
     </ul>
 </div>
 <footer></footer>
