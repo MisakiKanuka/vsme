@@ -56,8 +56,18 @@ def find_goal():
     return goal
 
 
-# 目標記録 まだ書いてない
+# 目標記録
+def add_goal(userid, goal):
+    conn = sqlite3.connect("vsme.sqlite")
 
+    cursor = conn.cursor()
+
+    sql = "INSERT INTO GOAL (userid, goal) VALUES(?, ?)"
+    cursor.execute(sql, (userid, goal))
+
+    conn.commit()
+
+    conn.close()
 
 if __name__ == "__main__":
     init_db()

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>first</title>
+</head>
+<body>
+<h1>vsME!</h1>
+
+<h2>目標を入力してください</h2>
+
+<form action="{{ url_for('add_goal') }}" method="post">
+    ID：<input type="text" name="userid"><br>
+    <textarea type="text" name="goal" rows="10" cols="70"></textarea><br>
+    <input type="submit" value="目標登録">
+    <input type="reset" value="リセット">
+</form>
+</body>
+</html>
