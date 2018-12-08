@@ -13,7 +13,7 @@ def init_db():
 
 
 # 行動詳細
-def find_detail_data():
+def find_detail_date():
     conn = sqlite3.connect("vsme.sqlite")
 
     cursor = conn.cursor()
