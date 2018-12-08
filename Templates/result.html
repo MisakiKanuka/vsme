@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>result</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Kosugi|Orbitron|Righteous|VT323" rel="stylesheet">
+</head>
+<body>
+<h1>vsME!</h1>
+<h2>目標：
+    {%for Individual_goal in goal %}
+    {{ Individual_goal[1] }}
+    {% endfor %}
+</h2>
+<h3>現　在</h3>
+<h4>◯勝◯敗</h4>
+<p>その調子</p>
+<a href="{{ url_for('add_detail_date') }}">記録する</a></body>
+</html>
