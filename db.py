@@ -28,11 +28,11 @@ def find_detail_date():
 
 
 def add_detail_date(userid, date, behavior, winlose):
-    conn = sqlite3.connect("vsme.sql")
+    conn = sqlite3.connect("vsme.sqlite")
 
     cursor = conn.cursor()
 
-    sql = "INSERT INTO DETAIL (userid, date, behavior, winlose) VALUES(?, ?)"
+    sql = "INSERT INTO DETAIL (userid, date, behavior, winlose) VALUES(?, ?, ?, ?)"
     cursor.execute(sql, (userid, date, behavior, winlose))
 
     conn.commit()

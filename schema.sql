@@ -21,9 +21,9 @@ CREATE TABLE GOAL(
 -- 入力データの詳細管理
 CREATE TABLE DETAIL(
   userid       INT,
-  DATE         DATETIME,
+  DATE         TEXT,
   behavior     TEXT,
-  winlose      INT
+  winlose      TEXT
 );
 
 -- 初期データ
