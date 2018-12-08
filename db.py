@@ -69,5 +69,19 @@ def add_goal(userid, goal):
 
     conn.close()
 
+
+# ユーザー登録
+def create_user(userid, password):
+    conn = sqlite3.connect("vsme.sqlite")
+
+    cursor = conn.cursor()
+
+    sql = "INSERT INTO USERLIST (userid, name, password) VALUES(?, ?, ?)"
+    cursor.execute(sql, (userid, name, password))
+
+    conn.commit()
+
+    conn.close()
+
 if __name__ == "__main__":
     init_db()

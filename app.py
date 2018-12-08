@@ -33,7 +33,7 @@ def add_detail_date():
 
 
 # 目標記録
-@app.route("/", methods=["GET", "POST"])
+@app.route("/goal", methods=["GET", "POST"])
 def add_goal():
     if request.method == "GET":
         goal = db.find_goal()
@@ -46,6 +46,23 @@ def add_goal():
         db.add_goal(userid, goal)
 
         return redirect(url_for("index"))
+
+
+# ユーザー登録
+@app.route("/", methods=["GET", "POST"])
+def create_user():
+    if request.method == "GET":
+        users_info = db.create_user()
+        return render_template("login.html", users_info=users_info)
+
+    if request.method == "POST":
+        userid = request.form["userid"]
+        name = request.form["name"]
+        password = request.form["password"]
+
+        db.create_user(userid, name, password)
+
+        return redirect(url_for("goal"))
 
 
 if __name__ == "__main__":
