@@ -8,8 +8,9 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     detail = db.find_detail_date()
+    goal = db.find_goal()
 
-    return render_template("index.html", detail=detail)
+    return render_template("index.html", detail=detail, goal=goal)
 
 
 @app.route("/add", methods=["GET", "POST"])

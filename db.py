@@ -47,13 +47,13 @@ def find_goal():
 
     cursor = conn.cursor()
 
-    sql = "SELECT goal FROM GOAL"
+    sql = "SELECT * FROM GOAL"
 
-    gorl = cursor.execute(sql).fetchall()
+    goal = cursor.execute(sql).fetchall()
 
     conn.close()
 
-    return gorl
+    return goal
 
 
 # 目標記録 まだ書いてない

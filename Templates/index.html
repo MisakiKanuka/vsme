@@ -10,7 +10,12 @@
 <div id="wrap">
     <h1>vsME!</h1>
 
-    <h2>目標：ここにGOALテーブルに入っているgoalを固定で表示させたい</h2>
+    <h2>目標：
+        {%for Individual_goal in goal %}
+        {{ Individual_goal[1] }}
+        {% endfor %}
+    </h2>
+
 
     <ul>
         {%for Individual_detail in detail %}
