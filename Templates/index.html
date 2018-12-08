@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <title>vsme</title>
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-    <!--<link rel="stylesheet" href="style.css">-->
 </head>
 <body>
 <header></header>
 <div id="wrap">
     <h1>vsME!</h1>
+
+    <ul>
+        {%for Individual_detail in detail %}
+        <li>{{ Individual_detail }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>今日は何をしましたか？</h2>
+    <ul>
+        <li><a href="{{ url_for(" add_detail_date") }}">記録</a></li>
+    </ul>
 </div>
 <footer></footer>
 </body>

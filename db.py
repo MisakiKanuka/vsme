@@ -1,4 +1,3 @@
-# db.py
 import sqlite3
 
 
@@ -21,11 +20,11 @@ def find_detail_data():
 
     sql = "SELECT * FROM DETAIL"
 
-    detail_data = cursor.execute(sql).fetchall()
+    detail_date = cursor.execute(sql).fetchall()
 
     conn.close()
 
-    return detail_data
+    return detail_date
 
 
 def add_detail_date(userid, date, behavior, winlose):
