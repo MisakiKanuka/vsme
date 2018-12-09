@@ -14,7 +14,16 @@
     {% endfor %}
 </h2>
 <h3>現　在</h3>
-<h4>◯勝◯敗</h4>
+<h4>
+    {%for cntwin in win %}
+    {{ cntwin }}
+    {% endfor %} 勝
+
+    {%for cntlose in lose %}
+    {{ cntlose }}
+    {% endfor %} 敗
+</h4>
+
 <p>その調子</p>
 <a href="{{ url_for('add_detail_date') }}">記録する</a></body>
 </html>

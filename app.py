@@ -14,6 +14,15 @@ def index():
     return render_template("index.html", detail=detail, goal=goal)
 
 
+# 勝敗カウント
+@app.route("/result")
+def cnt_winlose_data():
+    lose = db.find_winlose_data()
+    win = db.find_winlose_data()
+
+    return render_template("result.html", lose=lose, win=win)
+
+
 # 行動記録
 @app.route("/add", methods=["GET", "POST"])
 def add_detail_date():

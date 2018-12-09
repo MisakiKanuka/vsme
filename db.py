@@ -41,6 +41,40 @@ def add_detail_date(userid, behavior, winlose):
     conn.close()
 
 
+# 勝敗を取得する
+def cnt_winlose_data(winlose):
+    conn = sqlite3.connect("vsme.sqlite")
+
+    cursor = conn.cursor()
+
+    lose = "SELECT count(winlose) FROM DETAIL WHERE winlose='lose';"
+    win = "SELECT count(winlose) FROM DETAIL WHERE winlose='win';"
+
+    cursor.execute(lose, (winlose))
+    cursor.execute(win, (winlose))
+
+    conn.commit()
+
+    conn.close()
+
+
+# 勝敗を表示する
+def find_winlose_data():
+    conn = sqlite3.connect("vsme.sqlite")
+
+    cursor = conn.cursor()
+
+    lose = "SELECT * FROM DETAIL WHERE winlose='lose'"
+    win = "SELECT * FROM DETAIL WHERE winlose='win'"
+
+    cnt_lose = cursor.execute(lose).fetchall()
+    cnt_win = cursor.execute(win).fetchall()
+
+    conn.close()
+
+    return cnt_lose, cnt_win
+
+
 # 目標表示
 def find_goal():
     conn = sqlite3.connect("vsme.sqlite")
