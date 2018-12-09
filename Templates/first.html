@@ -12,8 +12,8 @@
 <h2>目標を入力してください</h2>
 
 <form action="{{ url_for('add_goal') }}" method="post">
-    ID：<input type="text" name="userid"><br>
-    <textarea type="text" name="goal" rows="10" cols="70"></textarea><br>
+    <input type="text" name="userid" placeholder="ID"><br>
+    <textarea type="text" name="goal" rows="10" cols="70" placeholder="例：今年中に◯◯の資格を取得する！" required></textarea><br>
     <input type="submit" value="目標登録" class="submit">
     <input type="reset" value="リセット" class="submit">
 </form>

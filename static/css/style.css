@@ -369,7 +369,7 @@ h1 {
     font-family: 'Orbitron', sans-serif;
     font-family: 'VT323', monospace;
     color: #FFFFFF;
-    font-size: 5em;
+    font-size: 10em;
     margin: 2% auto 0 auto;
 }
 
@@ -378,16 +378,26 @@ p {
 }
 
 .setsumei {
-   margin: 0 0 3% 0;
+   margin: 0 0 10% 0;
+   font-size: 1.8rem;
 }
 
 h2 {
     font-family: 'Bungee', cursive;
     color: #FFFFFF;
+    font-size: 3rem;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto 30px auto;
 }
 
 input {
     margin-bottom: 2%;
+    border-radius: 20px;
+    width: 75%;
+    height: 70px;
+    padding: 10px;
+    font-size: 2rem;
 }
 
 form {
@@ -395,8 +405,49 @@ form {
 }
 
 .submit {
+    margin-bottom: 2%;
     padding: 10px 50px;
     border-radius: 20px;
     border: 1px solid #ff5150;
     color: #ff5150;
+    width: 35%;
+    height: 70px;
+    padding: 10px;
+    font-size: 2rem;
+    background: #FFFFFF;
+}
+
+.submit:hover {
+    opacity: 0.8;
+}
+
+textarea {
+    overflow: auto;
+    width: 75%;
+    border-radius: 20px;
+    height: 300px;
+    padding: 10px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+ul {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.log {
+    width: 100%;
+    margin: 0 auto 80px;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+ul,li {
+    list-style: none;
+    text-align: justify;
+    font-size: 2rem;
+    color: #ffffff;
 }

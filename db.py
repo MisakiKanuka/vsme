@@ -192,6 +192,5 @@ def create_user(userid, name, password):
 
     conn.close()
 
-
 if __name__ == "__main__":
     init_db()

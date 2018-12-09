@@ -11,20 +11,23 @@
 <div id="wrap">
     <h1>vsME!</h1>
 
-    <h2>目標：
+    <h2>目標</h2>
+
+    <h2>
         {%for Individual_goal in goal %}
         {{ Individual_goal[1] }}
         {% endfor %}
     </h2>
 
-
-    <ul>
-        {%for Individual_detail in detail %}
-        <li>{{ Individual_detail[1] }} {{ Individual_detail[2] }} {{ Individual_detail[3] }} {{ Individual_detail[4]
-            }}
-        </li>
-        {% endfor %}
-    </ul>
+    <div class="log">
+        <ul>
+            {%for Individual_detail in detail %}
+            <li>{{ Individual_detail[1] }} {{ Individual_detail[2] }} {{ Individual_detail[3] }} {{ Individual_detail[4]
+                }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 
     <h2>今日は何をしましたか？</h2>
     <ul>
