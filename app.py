@@ -19,8 +19,9 @@ def index():
 def show_result():
     cnt_win = db.find_win()
     cnt_lose = db.find_lose()
+    goal = db.find_goal()
 
-    return render_template("result.html", cnt_win=cnt_win, cnt_lose=cnt_lose)
+    return render_template("result.html", cnt_win=cnt_win, cnt_lose=cnt_lose, goal=goal)
 
 
 # 行動記録

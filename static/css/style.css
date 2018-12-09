@@ -451,3 +451,18 @@ ul,li {
     font-size: 2rem;
     color: #ffffff;
 }
+
+.kiroku {
+    background: #ffffff;
+    font-size: 2rem;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #ff5150;
+}
+
+.radio {
+    height: 50px;
+    width: 100px;
+}
