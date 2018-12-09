@@ -14,13 +14,13 @@ def index():
     return render_template("index.html", detail=detail, goal=goal)
 
 
-# 勝敗カウント
+# 勝数カウント
 @app.route("/result")
-def cnt_winlose_data():
-    lose = db.find_winlose_data()
-    win = db.find_winlose_data()
+def show_result():
+    cnt_win = db.find_win()
+    cnt_lose = db.find_lose()
 
-    return render_template("result.html", lose=lose, win=win)
+    return render_template("result.html", cnt_win=cnt_win, cnt_lose=cnt_lose)
 
 
 # 行動記録
@@ -37,7 +37,7 @@ def add_detail_date():
 
         db.add_detail_date(userid, behavior, winlose)
 
-        return redirect(url_for("index"))
+        return redirect("/result")
 
 
 # 目標記録

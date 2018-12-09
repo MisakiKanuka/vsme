@@ -18,7 +18,7 @@ def find_detail_date():
 
     cursor = conn.cursor()
 
-    sql = "SELECT * FROM DETAIL"
+    sql = "SELECT * FROM DETAIL ORDER BY DATE desc"
 
     detail_date = cursor.execute(sql).fetchall()
 
@@ -41,16 +41,31 @@ def add_detail_date(userid, behavior, winlose):
     conn.close()
 
 
-# 勝敗を取得する
-def cnt_winlose_data(winlose):
+# # 勝敗を取得する
+# def cnt_winlose_data(winlose):
+#     conn = sqlite3.connect("vsme.sqlite")
+#
+#     cursor = conn.cursor()
+#
+#     lose = "SELECT count(winlose) FROM DETAIL WHERE winlose='lose';"
+#     win = "SELECT count(winlose) FROM DETAIL WHERE winlose='win';"
+#
+#     cursor.execute(lose, (winlose))
+#     cursor.execute(win, (winlose))
+#
+#     conn.commit()
+#
+#     conn.close()
+#
+
+# 勝数を取得する
+def cnt_win_data(winlose):
     conn = sqlite3.connect("vsme.sqlite")
 
     cursor = conn.cursor()
 
-    lose = "SELECT count(winlose) FROM DETAIL WHERE winlose='lose';"
     win = "SELECT count(winlose) FROM DETAIL WHERE winlose='win';"
 
-    cursor.execute(lose, (winlose))
     cursor.execute(win, (winlose))
 
     conn.commit()
@@ -58,21 +73,66 @@ def cnt_winlose_data(winlose):
     conn.close()
 
 
-# 勝敗を表示する
-def find_winlose_data():
+# 負け数を取得する
+def cnt_lose_data(winlose):
     conn = sqlite3.connect("vsme.sqlite")
 
     cursor = conn.cursor()
 
-    lose = "SELECT * FROM DETAIL WHERE winlose='lose'"
-    win = "SELECT * FROM DETAIL WHERE winlose='win'"
+    lose = "SELECT count(winlose) FROM DETAIL WHERE winlose='lose';"
 
-    cnt_lose = cursor.execute(lose).fetchall()
-    cnt_win = cursor.execute(win).fetchall()
+    cursor.execute(lose, (winlose))
+
+    conn.commit()
 
     conn.close()
 
-    return cnt_lose, cnt_win
+
+#
+# # 勝敗を表示する
+# def find_winlose_data():
+#     conn = sqlite3.connect("vsme.sqlite")
+#
+#     cursor = conn.cursor()
+#
+#     lose = "SELECT * FROM DETAIL WHERE winlose='lose'"
+#     win = "SELECT * FROM DETAIL WHERE winlose='win'"
+#
+#     cnt_lose = cursor.execute(lose).fetchall()
+#     cnt_win = cursor.execute(win).fetchall()
+#
+#     conn.close()
+#
+#     return cnt_lose, cnt_win
+
+def find_win():
+    """勝ち数を取得する"""
+    conn = sqlite3.connect("vsme.sqlite")
+
+    cursor = conn.cursor()
+
+    win = "SELECT count(winlose) FROM DETAIL WHERE winlose='win';"
+
+    cnt_win = cursor.execute(win).fetchone()
+
+    conn.cursor()
+
+    return cnt_win[0]
+
+
+def find_lose():
+    """負け数を取得する"""
+    conn = sqlite3.connect("vsme.sqlite")
+
+    cursor = conn.cursor()
+
+    lose = "SELECT count(winlose) FROM DETAIL WHERE winlose='lose';"
+
+    cnt_lose = cursor.execute(lose).fetchone()
+
+    conn.cursor()
+
+    return cnt_lose[0]
 
 
 # 目標表示
